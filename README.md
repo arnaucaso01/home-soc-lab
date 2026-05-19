@@ -62,3 +62,11 @@ This lab will include detections mapped to:
 - T1059 – Command and Scripting Interpreter
 - T1110 – Brute Force
 - T1046 – Network Service Discovery
+
+## Challenges and lessons learned
+
+- Wazuh installer warned about Ubuntu 26.04 not being officially supported. I used `-i` to skip the check and it worked.
+- The Windows agent tried to connect to the internal IP (192.168.100.20) instead of the bridge IP. Editing `ossec.conf` fixed it.
+- Sysmon did not log incoming SYN scans. I switched to `nmap -sT` and relied on Windows Filtering Platform events (5156).
+- The Wazuh agent on Windows could not read the Security log channel. I ended up checking logs manually with PowerShell. Not perfect, but it confirmed the scan was detected.
+- Writing custom rules and testing them is slower than expected. But when the alert finally showed up, it was satisfying.
