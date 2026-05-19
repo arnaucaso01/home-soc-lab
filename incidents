@@ -1,1 +1,3 @@
+Reports of simulated attacks and how they were detected.
 
+- Port scan from Kali (2026-05-19): detected via Windows Event ID 5156 and manual log analysis.
