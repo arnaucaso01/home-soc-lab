@@ -35,7 +35,25 @@ A hands-on Security Operations Center (SOC) home lab designed to simulate real-w
 
 ## Screenshots
 
-Coming soon...
+The Wazuh dashboard with the Windows agent active and showing its details.
+
+![Wazuh active agent](screenshots/wazuh-agents-active.png)
+
+Sysmon events in the Windows Event Viewer, mainly process creation.
+
+![Sysmon logs](screenshots/sysmon-operational-logs.png)
+
+Running an nmap TCP connect scan from Kali to the Windows machine.
+
+![Nmap scan](screenshots/kali-nmap-scan.png)
+
+Windows Security event 5156 where the Kali IP appears in the log.
+
+![Windows 5156](screenshots/windows-5156-kali.png)
+
+A custom alert in Wazuh for port scanning activity, mapped to MITRE T1046.
+
+![Wazuh alerts](screenshots/wazuh-dashboard-alerts.png)
 
 ## MITRE ATT&CK Mapping
 
