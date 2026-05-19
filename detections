@@ -1,1 +1,3 @@
+Custom Wazuh rules used in this lab.
 
+- `local_rules.xml` – rule for port scanning (ID 100001, level 10, MITRE T1046).
