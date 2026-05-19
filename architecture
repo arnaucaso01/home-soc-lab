@@ -1,1 +1,5 @@
+Network diagram and VM configuration.
 
+- Kali: 192.168.100.10  
+- Windows: 192.168.100.30  
+- Ubuntu (Wazuh): 192.168.100.20 (internal) + 192.168.1.185 (bridge)
