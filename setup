@@ -1,1 +1,6 @@
-
+Steps to reproduce the lab:  
+1. Install VirtualBox and import VMs.  
+2. Configure network adapters (NAT + Internal Network).  
+3. Install Wazuh on Ubuntu.  
+4. Install Sysmon on Windows.  
+5. Enroll Windows agent.
