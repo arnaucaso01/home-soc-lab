@@ -1,6 +1,19 @@
-Steps to reproduce the lab:  
-1. Install VirtualBox and import VMs.  
-2. Configure network adapters (NAT + Internal Network).  
-3. Install Wazuh on Ubuntu.  
-4. Install Sysmon on Windows.  
-5. Enroll Windows agent.
+# Requirements
+
+- VirtualBox 7.2.x
+- Windows 11 ISO
+- Kali Linux ISO
+- Ubuntu Server 26.04 (or 22.04)
+
+# Steps
+
+1. Create 3 VMs with two adapters: Bridged + Internal Network "SOC-LAB".
+2. Install Ubuntu, then Wazuh (ignore OS check with `-i`).
+3. Install Windows 11 (bypass TPM/Secure Boot with registry if needed).
+4. On Windows: install Sysmon with SwiftOnSecurity config.
+5. Install Wazuh agent on Windows, point to Ubuntu's bridge IP.
+6. On Ubuntu: add custom rule in `/var/ossec/etc/rules/local_rules.xml` and restart manager.
+7. Test: from Kali run `nmap -sT 192.168.100.30`.
+8. Check logs on Windows and alerts in Wazuh dashboard.
+
+Detailed commands are in the main README.
