@@ -1,3 +1,19 @@
-Reports of simulated attacks and how they were detected.
+# Port scan from Kali (2026-05-19)
 
-- Port scan from Kali (2026-05-19): detected via Windows Event ID 5156 and manual log analysis.
+**Attacker IP:** 192.168.100.10 (Kali)  
+**Victim IP:** 192.168.100.30 (Windows 11)  
+**Detection method:** manual log analysis (Windows Security event 5156)
+
+## What happened
+
+1. From Kali: `nmap -sT 192.168.100.30`
+2. On Windows: `Get-WinEvent -FilterHashtable @{LogName='Security'; ID=5156} | Where-Object {$_.Message -match "192.168.100.10"}`
+3. Found events showing connection attempts between Windows and Kali.
+
+## MITRE ATT&CK
+
+T1046 – Network Service Discovery
+
+## Response
+
+Created a custom Wazuh rule to alert on multiple 5156 events from the same source IP.
