@@ -1,1 +1,8 @@
+Log files are not stored in this repo due to size.
 
+However, the methodology is documented in the incidents folder and screenshots show relevant events.
+
+Key logs used:
+
+- Windows Security event 5156 (Filtering Platform connection)
+- Sysmon event ID 1 (process creation)
